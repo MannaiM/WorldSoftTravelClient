@@ -1,0 +1,37 @@
+
+						<div class="tabs travel-organiser-tabs clearfix" ng-controller="IndexCtrl as vm">
+
+							<ul class="tab-nav clearfix">
+								<li><a href="#tab-flights"><i class="icon-plane"></i><span
+										class="hidden-xs">Flights</span></a></li>
+								
+							</ul>
+
+							<div class="tab-container">
+								<div class="tab-content clearfix" id="tab-flights">
+									<table class="table table-condensed">
+										<tr>
+											<th class="active">Prix Vente</th>
+											<th class="success">Classe</th>
+											<th class="warning">Aeroport De Départ</th>
+											<th class="danger">Aeroport D'arrivée</th>
+											<th class="success">Departure</th>
+											<th class="active">Return</th>
+											<th class="warning">Reserver</th>
+										</tr>
+										<tr ng-repeat="retour in vm.mvmentPrixHotelBean.PrixVolsRet">
+											<td class="active">{{ retour.prixVenteR*vm.mvmentPrixHotelBean.adt}}</td>
+											<td class="success">{{ retour.LClassR}}</td>
+											<td class="warning">{{ retour.airDepR}}</td>
+											<td class="danger">{{ retour.airArrR}}</td>
+											<td class="success">{{ retour.dateResR}}</td>
+											<td class="active">{{ retour.dateRetR}}</td>
+											<td class="warning"><input class="btn btn-default" ng-click="vm.reserverVol(retour)" type="button" value="Reserver"></td>
+										</tr>
+									</table>
+								</div>
+							</div>
+
+						</div>
+
+						

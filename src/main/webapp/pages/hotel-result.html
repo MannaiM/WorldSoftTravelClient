@@ -1,0 +1,45 @@
+<div class="tabs travel-organiser-tabs clearfix"
+	ng-controller="IndexCtrl as vm">
+
+	<ul class="tab-nav clearfix">
+
+		<li><a href="#tab-hotels"><i class="icon-building"></i><span
+				class="hidden-xs">Hotels</span></a></li>
+	</ul>
+
+	<div class="tab-container">
+
+		<div class="tab-content clearfix" id="tab-hotels">
+			<table class="table table-condensed">
+				<tr>
+					<th class="active">Ville Hotel</th>
+					<th class="success">Pays</th>
+					<th class="warning">Nom Hotel</th>
+					<th class="danger">Type Chambre</th>
+					<th class="active">Arrangement</th>
+					<th class="info">Categorie</th>
+					<th class="success">Prix Vente</th>
+					<th class="danger">Nb Nuite</th>
+					<th class="warning">Reserver</th>
+				</tr>
+				<tr ng-repeat="x in vm.mvmentPrixHotelBean.PrixHotels">
+					<td class="active">{{ x.VilleHotelR }}</td>
+					<td class="success">{{ x.PaysR }}</td>
+					<td class="warning">{{ x.NomHotelR }}</td>
+					<td class="danger">{{ x.LTypeChambreR }}</td>
+					<td class="active">{{ x.arrangement }}</td>
+					<td class="info">{{ x.CategorieR }}</td>
+					<td class="success">{{ x.prixVenteR *
+						vm.mvmentPrixHotelBean.mvmentPrixHotel.nbrchm }}</td>
+					<td class="danger">{{ x.Compteur - 1 }}</td>
+					<td class="warning"><input class="btn btn-default"
+						type="button" value="Reserver" ng-click="vm.reserverHotel(x)"></td>
+				</tr>
+			</table>
+
+
+		</div>
+
+	</div>
+
+</div>

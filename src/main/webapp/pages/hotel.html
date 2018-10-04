@@ -1,0 +1,114 @@
+
+<div class="tabs travel-organiser-tabs clearfix"
+	ng-controller="IndexCtrl as vm">
+
+	<ul class="tab-nav clearfix">
+
+		<li><a href="#tab-hotels"><i class="icon-building"></i><span
+				class="hidden-xs">Hotels</span></a></li>
+
+	</ul>
+
+	<div class="tab-container">
+
+		<div class="tab-content clearfix" id="tab-hotels">
+			<div class="heading-block nobottomborder bottommargin-sm clearfix">
+				<h4 class="fleft">Book your Hotels</h4>
+
+				<div class="clear"></div>
+			</div>
+			<div class="nobottommargin">
+				<div class="row">
+					<div class="col-sm-4 col-xs-12 bottommargin-sm">
+						<label for="">Ville</label> 
+						
+							<select id="template-contactform-title" name="template-contactform-title"
+							class="sm-form-control"
+							 ng-model="vm.mvmentPrixHotelBean.mvmentPrixHotel.VilleHotelM" >
+                             <option value="Sousse">Sousse</option>
+                             <option value="Mahdia">Mahdia</option>
+                             <option value="Tabarka">Tabarka</option>
+                             <option value="Hammamet">Hammamet</option>
+                             <option value="Tunis">Tunis</option>
+                             <option value="Nabeul">Nabeul</option>
+                             <option value="Bizerte">Bizerte</option> 
+                             <option value="Monastir">Monastir</option>
+                            <option value="Zarzis Djerba">Zarzis Djerba</option>	 
+                            <option value="Béja">Beja</option>
+                            <option value="Tozeur">Tozeur</option>		
+                             <option value="Aïn Draham">Ain Draham</option>		
+                             </select>
+							<label
+							ng-show="vm.PaysError">this field is required</label>
+					</div>
+					<div class="col-sm-4 col-xs-12 bottommargin-sm">
+						<label for="">Type Chambre</label> <select
+							id="template-contactform-title" name="template-contactform-title"
+							class="sm-form-control"
+							ng-model="vm.mvmentPrixHotelBean.mvmentPrixHotel.LTypeChambreM">
+							<option ng-repeat="chmp in vm.mvmentPrixHotelBean.typeCmps"
+								value="{{chmp.type}}">{{chmp.lTypeChambre}}</option>
+						</select><label ng-show="vm.TypeChambreError">this field is
+							required</label>
+					</div>
+					<div class="col-sm-4 col-xs-12 bottommargin-sm">
+						<label for="">Arrangement</label> <select
+							id="template-contactform-title" name="template-contactform-title"
+							class="sm-form-control"
+							ng-model="vm.mvmentPrixHotelBean.mvmentPrixHotel.arrangement">
+							<option ng-repeat="arr in vm.mvmentPrixHotelBean.typeArran"
+								value="{{arr.abvArrangement}}">{{arr.lArrangement}}</option>
+						</select>
+
+
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-8 bottommargin-sm">
+						<div class="row">
+							<div class="col-sm-6 col-xs-6">
+								<label for="">Check in</label> <input type="text"
+									pikaday="myPickerObject" value="" class="sm-form-control tleft"
+									ng-model="vm.mvmentPrixHotelBean.mvmentPrixHotel.DateCheckInM"
+									name="start"><label ng-show="vm.DateCheckInError">this
+									field is required</label>
+
+							</div>
+							<div class="col-sm-6 col-xs-6">
+								<label for="">Check out</label> <input type="text" value=""
+									pikaday="myPickerObject"
+									ng-model="vm.mvmentPrixHotelBean.mvmentPrixHotel.DateCheckOutM"
+									class="sm-form-control tleft"><label
+									ng-show="vm.DateCheckOutError">this field is required</label>
+							</div>
+
+						</div>
+					</div>
+					<div class="col-sm-2 bottommargin-sm">
+						<label for="">Rooms</label> <input type="number" min="1" max="10"
+							value="" class="sm-form-control" name="end"
+							ng-model="vm.mvmentPrixHotelBean.mvmentPrixHotel.nbrchm"
+							placeholder="2"><label ng-show="vm.nbrchmError">this
+							field is required</label>
+					</div>
+					<div class="col-sm-2 bottommargin-sm">
+						<label for="">Adults</label> <input
+							ng-model="vm.mvmentPrixHotelBean.adt" type="number" min="1"
+							max="10" value="" class="sm-form-control" placeholder="2">
+					</div>
+					<div class="col-sm-12">
+						<button class="button button-3d nomargin rightmargin-sm"
+							ng-click="vm.searchHotel()">Search Hotels</button>
+						<a href="#" class="more-link fright" style="margin-top: 9px;">Popular
+							Hotels</a>
+					</div>
+				</div>
+				
+
+
+			</div>
+
+		</div>
+
+	</div>
+</div>

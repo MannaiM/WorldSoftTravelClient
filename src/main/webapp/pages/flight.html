@@ -1,0 +1,95 @@
+
+<div class="tabs travel-organiser-tabs clearfix"
+	ng-controller="IndexCtrl as vm">
+
+	<ul class="tab-nav clearfix">
+		<li><a href="#tab-flights"><i class="icon-plane"></i><span
+				class="hidden-xs">Flights</span></a></li>
+	</ul>
+
+	<div class="tab-container">
+
+		<div class="tab-content clearfix" id="tab-flights">
+			<div class="heading-block nobottomborder bottommargin-sm clearfix">
+				<h4 class="fleft">Book your Flights</h4>
+				<div class="clear"></div>
+			</div>
+			<div class="nobottommargin">
+				<div class="row">
+					<div class="col-sm-6 col-xs-12 bottommargin-sm">
+						<label for="">From</label> <input type="text" value=""
+							class="sm-form-control"
+							ng-model="vm.mvmentPrixHotelBean.mvmentPrixVol.airDepM"
+							placeholder="Eg. Melbourne, Australia">
+							
+							<select ng-model="vm.mvmentPrixHotelBean.mvmentPrixVol.airDepM">
+                                 <option value="CDG"> Paris-Charles-de-Gaulle</option>
+                                 <option value="TUN"> international de Tunis-Carthage </option>
+                                  <option value="ORY">Paris Orly</option>
+                                 <option value="CEQ">Cannes - Mandelieu, France</option>
+                                <option value="NCE">Nice-Côte d'Azur</option>
+                                 <option value="SXF">Berlin-Schönefeld</option>
+                                 <option value="TXL">Berlin-Tegel</option>
+                                 <option value="DJE">  international de Djerba-Zarzis </option>
+                                 <option value="NBE">  international d'Enfidha-Hammamet </option>
+                                 <option value="MIR">  international de Monastir Habib-Bourguiba </option>
+                                <option value="TBJ">  international de Tabarka-Aïn Draham </option>
+                                 </select>
+							
+							<label
+							ng-show="vm.airDepError">this field is required</label>
+					</div>
+					<div class="col-sm-6 col-xs-12 bottommargin-sm">
+						<label for="">To</label> <input type="text" value=""
+							class="sm-form-control"
+							ng-model="vm.mvmentPrixHotelBean.mvmentPrixVol.airArrM"
+							placeholder="Eg. New York, United States"><label
+							ng-show="vm.airArrError">this field is required</label>
+							<select ng-model="vm.mvmentPrixHotelBean.mvmentPrixVol.airArrM">
+                                 <option value="CDG"> Paris-Charles-de-Gaulle</option>
+                                 <option value="TUN"> international de Tunis-Carthage </option>
+                                  <option value="ORY">Paris Orly</option>
+                                 <option value="CEQ">Cannes - Mandelieu, France</option>
+                                <option value="NCE">Nice-Côte d'Azur</option>
+                                 <option value="SXF">Berlin-Schönefeld</option>
+                                 <option value="TXL">Berlin-Tegel</option>
+                                 <option value="DJE">  international de Djerba-Zarzis </option>
+                                 <option value="NBE">  international d'Enfidha-Hammamet </option>
+                                 <option value="MIR">  international de Monastir Habib-Bourguiba </option>
+                                <option value="TBJ">  international de Tabarka-Aïn Draham </option>
+                                 </select>
+					</div>
+					<div class="clear"></div>
+					<div class=" col-sm-9 bottommargin-sm">
+						<div class="row">
+							<div class="col-sm-6 col-xs-6">
+								<label for="">Departure</label> <input type="text"
+									pikaday="myPickerObject"
+									ng-model="vm.mvmentPrixHotelBean.mvmentPrixVol.dateResM"
+									value="" class="sm-form-control tleft"><label
+							ng-show="vm.dateResError">this field is required</label>
+							</div>
+							<div class="col-sm-6 col-xs-6">
+								<label for="">Return</label> <input type="text"
+									pikaday="myPickerObject"
+									ng-model="vm.mvmentPrixHotelBean.mvmentPrixVol.dateRetM"
+									value="" class="sm-form-control tleft">
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-3 bottommargin-sm">
+						<label for="">Adults</label> <input ng-model="vm.mvmentPrixHotelBean.adt" type="number" min="1" max="10"
+							value="" class="sm-form-control" placeholder="2">
+					</div>
+					<div class="col-sm-12">
+						<button ng-click="vm.searchVol()"
+							class="button button-3d nomargin rightmargin-sm">Search
+							Flights</button>
+						<a href="#" class="more-link fright" style="margin-top: 9px;">Advanced
+							Search</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
